@@ -11,7 +11,7 @@ const TWITTER_TOKENS = {
   const DB_USER = "admin";
   const DB_PASSWORD = process.env.DB_PASSWORD;
   const MONGODB = {
-    MONGODB_URI: `mongodb+srv://admin:${DB_PASSWORD}@cluster0.q1chg.mongodb.net/readbetter?retryWrites=true&w=majority`
+    MONGODB_URI: `mongodb+srv://kmj-007:${process.env.DB_PASSWORD}@gladiator-kris.t7sjb.mongodb.net/scraper?retryWrites=true&w=majority`
   };
   
   const SESSION = {
