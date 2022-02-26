@@ -2,22 +2,21 @@ import { useState, useEffect } from 'react'
 import {Box, Button, Heading, Flex, Image, Center} from '@chakra-ui/react'
 import {FaTwitter} from 'react-icons/fa'
 import logo from '../android-chrome-192x192.png'
-import {useSearchParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
+import {localBE} from '../../offline-be'
 
 
 function BooksRecommended(params) {
   const [resData, setResData] = useState();
-  const [searchParams, setSearchParams] = useSearchParams();
 
-  searchParams.get("__firebase_request_key")
+  let userHandle = useParams();
 
-  console.log({searchParams, resData})
+  console.log({userHandle, resData})
 
 
   useEffect(() => {
     if(!resData){
-      //fetch('https://readbetter-backend.vercel.app/user/krishnaa404'+searchParams)
-      fetch('http://localhost:1234/user/krishnaa404'+searchParams)
+      fetch((localBE || 'https://readbetter-backend.vercel.app/user/krishnaa404')+userHandle.twitterHandle)
       .then((res) => {
         console.log(res);
         setResData(res);
