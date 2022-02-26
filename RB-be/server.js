@@ -82,7 +82,7 @@ app.get("/", authCheck, (req, res) => {
 app.get("/user/:userId",(req,res)=>{
 let userId=req.params.userId
 T.get('friends/ids', { screen_name:userId },  function (err, data, response) {
-  console.log(response);
+  // console.log(response);
   res.json(data);
   if(err){
     res.send(err);
