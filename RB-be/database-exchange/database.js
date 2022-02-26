@@ -7,7 +7,7 @@ const Book = require("../models/book-model");
 const bookData = Book.find({},'book', function (err, users) {
     // return res.end(JSON.stringify(users));
     // return res.send( JSON.parse(JSON.stringify(users)) );
-    console.log(users);
+    // console.log(users);
 });
 
 

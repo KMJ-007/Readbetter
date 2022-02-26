@@ -11,12 +11,13 @@ function BooksRecommended(params) {
 
   searchParams.get("__firebase_request_key")
 
-  console.log({searchParams})
+  console.log({searchParams, resData})
 
 
   useEffect(() => {
     if(!resData){
-      fetch('https://readbetter-backend.vercel.app/user/krishnaa404'+searchParams)
+      //fetch('https://readbetter-backend.vercel.app/user/krishnaa404'+searchParams)
+      fetch('http://localhost:1234/user/krishnaa404'+searchParams)
       .then((res) => {
         console.log(res);
         setResData(res);
@@ -41,7 +42,7 @@ function BooksRecommended(params) {
       </Center>
     )
   }
-  return ( resData.stringify()
+  return ( JSON.stringify(resData)
     // <Center h="100vh">
     //   <Box>
     //     <Center flexDirection="column">

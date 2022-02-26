@@ -33,7 +33,7 @@ app.use(
   })
   );
   
-  console.log(bookData);
+  // console.log(bookData);
 // parse cookies
 app.use(cookieParser());
 
@@ -43,13 +43,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 require(path.join(__dirname, './config/passport-setup'))(passport); //Load passport config
 // set up cors to allow us to accept requests from our client
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000", // allow to server to accept request from different origin
-//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     credentials: true // allow session cookie from browser to pass through
-//   })
-// );
+app.use(
+  cors({
+    origin: "*", // allow to server to accept request from different origin
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+  "optionsSuccessStatus": 204,
+    allowedHeaders: ["Access-Control-Allow-Origin", "Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"],
+    // credentials: true // allow session cookie from browser to pass through
+  })
+);
 
 
 
@@ -79,16 +82,17 @@ app.get("/", authCheck, (req, res) => {
   });
 });
 
-app.get("/user/:userId",(req,res)=>{
-let userId=req.params.userId
-T.get('friends/ids', { screen_name:userId },  function (err, data, response) {
-  // console.log(response);
-  res.json(data);
-  if(err){
-    res.send(err);
-  }
-})
-})
+app.get("/user/:userId", (req,res)=>{
+  let userId=req.params.userId
+  T.get('friends/ids', { screen_name:userId },  function (err, data, response) {
+    console.log("::::::::::::::::::::::::::::::::::::::::::")
+    console.log(response);
+    res.json(data);
+    if(err){
+      res.send(err);
+    }
+  })
+});
 
 // app.get("/mongodata",(req,res)=>{
 //   res.json(bookData)
