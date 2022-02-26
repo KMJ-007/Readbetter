@@ -35,13 +35,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 require(path.join(__dirname, './config/passport-setup'))(passport); //Load passport config
 // set up cors to allow us to accept requests from our client
-app.use(
-  cors({
-    origin: "http://localhost:3000", // allow to server to accept request from different origin
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true // allow session cookie from browser to pass through
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000", // allow to server to accept request from different origin
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     credentials: true // allow session cookie from browser to pass through
+//   })
+// );
 
 // set up routes
 app.use("/auth", authRoutes);
