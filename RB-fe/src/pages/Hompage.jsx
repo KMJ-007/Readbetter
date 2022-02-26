@@ -1,29 +1,49 @@
 import { useState } from 'react'
-import {Box, Button, Heading, Flex, Image, Link, Center} from '@chakra-ui/react'
-import {FaTwitter} from 'react-icons/fa'
+import {Box, Button, Center, Heading, Input, Flex, FormControl, FormLabel, Image, Link, Text, InputGroup, InputLeftAddon} from '@chakra-ui/react'
+import {ArrowForwardIcon} from '@chakra-ui/icons'
 import logo from '../android-chrome-192x192.png'
-import {Link as RouteLink} from 'react-router-dom'
+import {Navigate} from 'react-router-dom'
 
 
 function Homepage() {
-  const [count, setCount] = useState(0)
+  const [inputValue, setInputValue] = useState()
 
-  return (
+  let freeslots = 5;
+
+  const handleSubmit = (formInput) => {
+    formInput.preventDefault();
+    console.log(formInput);
+    setInputValue(formInput.target["0"].value);
+  }
+
+  if(inputValue) {
+    return (<Navigate to= {"/user/"+inputValue} />)
+  } 
+  return (  
     <Center h="100vh">
       <Box>
         <Center flexDirection="column">
           <Image src={logo} alt="Logo of Read Better" />
-          <Heading align="center">Know what the leaders you follow Recommend!</Heading>
-          <Link as={RouteLink} to='/add-recommendation'>
-            <Button colorScheme='twitter' leftIcon={<FaTwitter/>}>
-              Twitter  
-            </Button>
-          </Link>
+          <Heading align="center">Read what the best Read.</Heading>
+            <form onSubmit={handleSubmit}>
+            <Center flexDirection="column" >
+              <FormControl isRequired>
+                  <FormLabel htmlFor='handleInput'>Personalised Book recommendations from leaders you follow on Twitter.</FormLabel>
+                  <InputGroup margin="auto" width="15rem">
+                      <InputLeftAddon children="@" />
+                      <Input id="handleInput" placeholder="twitterHandle" />   
+                  </InputGroup>                  
+              </FormControl>
+              <Button colorScheme='twitter' rightIcon={<ArrowForwardIcon />} mt={4} type="submit">
+                Lets Go
+              </Button>
+            </Center>
+          </form>
         </Center>
       </Box>  
     </Center>
-    
   )
+  
 }
 
 export default Homepage

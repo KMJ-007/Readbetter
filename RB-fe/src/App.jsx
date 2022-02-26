@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Homepage from './pages/Hompage';
 import AddRecommendation from './pages/AddRecommendation';
+import BooksRecommended from './pages/BooksRecommended';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/books-recommended" element={<BooksRecommended />} />
         <Route path="/add-recommendation" element={<AddRecommendation />} />
         <Route path="/" element={<Homepage />} />
       </Routes>
