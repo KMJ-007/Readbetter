@@ -11,12 +11,12 @@ function BooksRecommended(params) {
 
   searchParams.get("__firebase_request_key")
 
-  // console.log({searchParams})
+  console.log({searchParams})
 
 
   useEffect(() => {
     if(!resData){
-      fetch('https://readbetter-backend.vercel.app/user/'+searchParams, {mode:'no-cors'})
+      fetch('https://readbetter-backend.vercel.app/user/krishnaa404'+searchParams)
       .then((res) => {
         console.log(res);
         setResData(res);

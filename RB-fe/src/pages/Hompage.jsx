@@ -13,7 +13,7 @@ function Homepage() {
 
   const handleSubmit = (formInput) => {
     formInput.preventDefault();
-    console.log(formInput);
+    // console.log(formInput);
     setInputValue(formInput.target["0"].value);
   }
 
