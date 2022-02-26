@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/books-recommended" element={<BooksRecommended />} />
+        <Route path="user/:twitterHandle" element={<BooksRecommended />} />
         <Route path="/add-recommendation" element={<AddRecommendation />} />
         <Route path="/" element={<Homepage />} />
       </Routes>

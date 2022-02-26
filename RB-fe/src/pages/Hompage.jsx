@@ -3,6 +3,7 @@ import {Box, Button, Center, Heading, Input, Flex, FormControl, FormLabel, Image
 import {ArrowForwardIcon} from '@chakra-ui/icons'
 import logo from '../android-chrome-192x192.png'
 import {Navigate} from 'react-router-dom'
+import {localFE} from '../../offlineconstants'
 
 
 function Homepage() {
