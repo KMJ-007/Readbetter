@@ -1,1 +1,0 @@
-export const localFE="http://localhost:3000/"
