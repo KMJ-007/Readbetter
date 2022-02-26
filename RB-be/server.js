@@ -12,6 +12,14 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser"); // parse cookie header
 const path = require("path");
 require('dotenv'). config();
+const Twit = require('twit');
+
+var T = new Twit({
+  consumer_key:         process.env.krishna_TWITTER_CONSUMER_KEY,
+  consumer_secret:      process.env.krishna_TWITTER_CONSUMER_SECRET,
+  access_token:         process.env.krishna_TWITTER_ACCESS_TOKEN,
+  access_token_secret:  process.env.krishna_TWITTER_TOKEN_SECRET,
+})
 
 // connect to mongodb
 mongoose.connect(keys.MONGODB_URI, () => {
@@ -35,13 +43,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 require(path.join(__dirname, './config/passport-setup'))(passport); //Load passport config
 // set up cors to allow us to accept requests from our client
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000", // allow to server to accept request from different origin
-//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     credentials: true // allow session cookie from browser to pass through
-//   })
-// );
+app.use(
+  cors({
+    origin: "http://localhost:3000", // allow to server to accept request from different origin
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true // allow session cookie from browser to pass through
+  })
+);
 
 // set up routes
 app.use("/auth", authRoutes);
@@ -68,6 +76,19 @@ app.get("/", authCheck, (req, res) => {
     cookies: req.cookies
   });
 });
+
+app.post("/user/:userId",(req,res)=>{
+let userId=req.params.userId
+T.get('friends/ids', { screen_name:userId },  function (err, data, response) {
+  console.log(response);
+  res.json(data);
+  if(err){
+    res.send(err);
+  }
+})
+})
+
+
 
 // connect react to nodejs express server
 app.listen(port, () => console.log(`Server is running on port ${port}!`));
