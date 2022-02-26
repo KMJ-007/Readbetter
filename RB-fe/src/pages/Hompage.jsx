@@ -16,7 +16,7 @@ function Homepage() {
           <Heading align="center">Know what the leaders you follow Recommend!</Heading>
           <Link as={RouteLink} to='/add-recommendation'>
             <Button colorScheme='twitter' leftIcon={<FaTwitter/>}>
-            Twitter  
+              Twitter  
             </Button>
           </Link>
         </Center>

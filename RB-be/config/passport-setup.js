@@ -22,12 +22,15 @@ passport.deserializeUser((id, done) => {
     });
 });
 
+const token = keys.TWITTER_ACCESS_TOKEN;
+const tokenSecret = keys.TWITTER_TOKEN_SECRET;
+
 passport.use(
   new TwitterStrategy(
     {
       consumerKey: keys.TWITTER_CONSUMER_KEY,
       consumerSecret: keys.TWITTER_CONSUMER_SECRET,
-      callbackURL: "/auth/twitter/redirect"
+      callbackURL: keys.callbackURL
     },
     async (token, tokenSecret, profile, done) => {
       // find current user in UserModel
