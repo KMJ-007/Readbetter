@@ -13,7 +13,7 @@
         "headers": [
           {
           "key": "access-control-allow-origin",
-          "value": "*"
+          "value": "http://localhost:3000'"
         }
         ]
       }
