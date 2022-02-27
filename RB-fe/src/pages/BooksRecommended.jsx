@@ -16,10 +16,10 @@ function BooksRecommended(params) {
 
   useEffect(() => {
     if(!resData){
-      fetch(('https://readbetter-backend.vercel.app/user/')+userHandle.twitterHandle),{ mode: 'no-cors', }
+      fetch(('https://readbetter-backend.vercel.app/user/')+userHandle.twitterHandle,{ mode: 'no-cors', })
       .then((res) => {
-        console.log(res);
-        setResData(res);
+        console.log(res.json());
+        setResData(res.json());
       })
       .catch(err => {
         console.log(err);
