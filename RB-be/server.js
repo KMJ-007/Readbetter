@@ -91,6 +91,11 @@ app.get("/user/:userId", (req,res)=>{
 
 
   T.get('friends/ids', { screen_name:userId },  function (err, data, response) {
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    response.setHeader('Access-Control-Allow-Credentials', true);
+    response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
+
     console.log("::::::::::::::::::::::::::::::::::::::::::")
     console.log(response);
     res.json(data);
