@@ -5,7 +5,7 @@ const leader = require('./models/leader-model')
 const bookRecomandation=(followersId)=>{
     console.log("-------------------------------")
     // leader.find(followersId)
-    return followersId;
+    console.log(followersId);
 
     
 }
