@@ -16,7 +16,7 @@ function BooksRecommended(params) {
 
   useEffect(() => {
     if(!resData){
-      fetch(('https://readbetter-backend.vercel.app/user/')+userHandle.twitterHandle)
+      fetch(('https://readbetter-backend.vercel.app/user/')+userHandle.twitterHandle),{ mode: 'no-cors', }
       .then((res) => {
         console.log(res);
         setResData(res);
