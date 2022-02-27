@@ -121,7 +121,7 @@ T.get('friends/list', { screen_name:userId },  function (err, data, response) {
           },
           
         ]
-  res.json(recomandation);
+  res.json(data);
   if(err){
     res.send(err);
   }
