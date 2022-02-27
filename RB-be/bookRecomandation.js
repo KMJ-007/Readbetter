@@ -4,9 +4,13 @@ const Book = require('./models/book-model')
 const leader = require('./models/leader-model')
 const bookRecomandation=(followersId)=>{
     console.log("-------------------------------")
-    // leader.find(followersId)
-    console.log(followersId);
+    leader.find(followersId)
+    const followerArray = (followersId.users).map((data,i)=>{
 
+        // console.log(data.screen_name)
+        return data.screen_name
+    })
+    // console.log(followerArray);
     
 }
 
