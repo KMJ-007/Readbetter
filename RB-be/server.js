@@ -91,7 +91,7 @@ app.set("view engine", "ejs");
 app
   .route("/user")
   .get((req,res)=>{
-    let userId=req.query.format
+    let userId=req.query.userHandle
 
           let  recomandation = [
             
