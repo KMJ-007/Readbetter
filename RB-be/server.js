@@ -261,6 +261,60 @@ app.get("/user?",(req,res)=>{
     ],
     imageUrl:"https://images-na.ssl-images-amazon.com/images/I/51tEO57bs1L._SX328_BO1,204,203,200_.jpg"
     },
+    {
+      bookName:"Principles (for Success)",
+      bookAuthors:[ "Ray Dalio"],
+      recomandedBy:[
+        {
+        imageUrl:"https://pbs.twimg.com/profile_images/1414439092373254147/JdS8yLGI_400x400.jpg",
+        twitterhandle:"billgates",
+        name:"Bill Gates"
+      },
+        {
+        imageUrl:"https://pbs.twimg.com/profile_images/2233350183/hastings_reed_abosch_400x400.jpg",
+        twitterhandle:"reedhastings",
+        name:"Reed Hastings"
+      },
+        {
+        imageUrl:"https://pbs.twimg.com/profile_images/49918572/half-face-ice_400x400.jpg",
+        twitterhandle:"tferriss",
+        name:"Tim Ferriss"
+      },
+        {
+        imageUrl:"https://pbs.twimg.com/profile_images/1440461885703217155/Js8kvT7a_400x400.jpg",
+        twitterhandle:"TonyRobbins",
+        name:"Tony Robbins"
+      }
+    ],
+    imageUrl:"https://images-na.ssl-images-amazon.com/images/I/41mD+n0RquL._SX258_BO1,204,203,200_.jpg"
+    },
+    {
+      bookName:"Stillness Is the Key",
+      bookAuthors:[  "Ryan Holiday"],
+      recomandedBy:[
+        {
+        imageUrl:"https://pbs.twimg.com/profile_images/1403013239487680512/FEfDeOTX_400x400.jpg",
+        twitterhandle:"ProfCalNewport",
+        name:"Cal Newport"
+      },
+        {
+        imageUrl:"https://pbs.twimg.com/profile_images/1315809894411403265/GFTl08tw_400x400.jpg",
+        twitterhandle:"ariannahuff",
+        name:"Arianna Huffington"
+      },
+        {
+        imageUrl:"https://pbs.twimg.com/profile_images/1204727725836996608/ByShSrLR_400x400.jpg",
+        twitterhandle:"IAmMarkManson",
+        name:"Mark Manson"
+      },
+        {
+        imageUrl:"https://pbs.twimg.com/profile_images/1408049737157259271/7MmiUGAI_400x400.jpg",
+        twitterhandle:"angeladuckw",
+        name:"Angela Duckworth"
+      }
+    ],
+    imageUrl:"https://images-na.ssl-images-amazon.com/images/I/71xpXdXuZRL.jpg"
+    }
     
   ]
 

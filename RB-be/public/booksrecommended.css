@@ -1,3 +1,11 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align-last: center;
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -7,20 +15,109 @@ body {
     justify-content: center;
 }
 #fullCard {
-    height: 20rem;
-    width: 20rem;
+    height: 30rem;
+    width: 30rem;
     background-color: azure;
     overflow: hidden;
 }
 
 .singleRow {
-    height: 4rem;
-    width: 20rem;
+    height: 6rem;
+    width: 30rem;
     display: flex;
 }
 
 .tile, .bookImage {
     height: 4rem;
     width: 4rem;
+}
+
+.tile {
+    margin: 1rem;
+}
+
+userTile{
+    height: 6rem;
+    width: 6rem;
+}
+
+.tileT {
+    height: 6rem;
+    width: 6rem;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.tileR {
+    height: 6rem;
+    width: 6 rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tileB {
+    height: 6rem;
+    width: 6 rem;
+    overflow: hidden;
+}
+
+.userImage {
+    height: 6rem;
+    width: 6rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+p {
+    margin: 0;
+    margin-left: 4px;
+}
+.recommendor{
+    display: flex;
+}
+
+.recommendorImg {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+}
+
+#twoBy2>img {
+    margin-top: -1rem;
+    margin-left: -1rem;    
+}
+
+#twoBy3>img {
+    margin-top: -1rem;
+}
+
+#twoBy4>img {
+    margin-top: -1rem;
+    margin-left: 1rem;    
+}
+
+#threeBy2>img {
+    margin-left: -1rem;    
+}
+
+#threeBy4>img {
+    margin-left: 1rem;    
+}
+
+#fourBy2>img {
+    margin-top: 1rem;
+    margin-left: -1rem;
+}
+
+#fourBy3>img {
+    margin-top: 1rem;
+}
+
+#fourBy4>img {
+    margin-top: 1rem;
+    margin-left: 1rem;
 }

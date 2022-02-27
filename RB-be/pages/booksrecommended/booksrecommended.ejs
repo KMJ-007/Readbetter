@@ -8,101 +8,174 @@
     <title>Document</title>
 </head>
 <body>
-    Recommended Books
+    <header>
+        <img src="../android-chrome-192x192.png" alt="" />
+        <h2> Personalised Book recommendations from leaders you follow on Twitter.</h2>
+    </header>
     <div id="fullCard">
         <div id="firstRow" class="singleRow">
-            <div id="1by1" class="tile">
+            <div id="1by1" class="tileT">
                 <div class="recommendor">
-                    Recommendor
+                    <img async class="recommendorImg" src="<%= data[0].recomandedBy[0].imageUrl %>" />
+                    <p>@<%= data[0].recomandedBy[0].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[0].recomandedBy[1].imageUrl %>" />
+                    <p>@<%= data[0].recomandedBy[1].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[0].recomandedBy[2].imageUrl %>" />
+                    <p>@<%= data[0].recomandedBy[2].twitterhandle %></p>
                 </div>
             </div>
             <div id="1by2" class="tile">
             </div>
-            <div id="1by3" class="tile">
+            <div id="1by3" class="tileT">
                 <div class="recommendor">
-                    Recommendor
+                    <img async class="recommendorImg" src="<%= data[1].recomandedBy[0].imageUrl %>" />
+                    <p>@<%= data[1].recomandedBy[0].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[1].recomandedBy[1].imageUrl %>" />
+                    <p>@<%= data[1].recomandedBy[1].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[1].recomandedBy[2].imageUrl %>" />
+                    <p>@<%= data[1].recomandedBy[2].twitterhandle %></p>
                 </div>
             </div>
             <div id="1by4" class="tile">
 
             </div>
-            <div id="1by5" class="tile">
+            <div id="1by5" class="tileT">
                 <div class="recommendor">
-                    Recommendor
+                    <img async class="recommendorImg" src="<%= data[2].recomandedBy[0].imageUrl %>" />
+                    <p>@<%= data[2].recomandedBy[0].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[2].recomandedBy[1].imageUrl %>" />
+                    <p>@<%= data[2].recomandedBy[1].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[2].recomandedBy[2].imageUrl %>" />
+                    <p>@<%= data[2].recomandedBy[2].twitterhandle %></p>
                 </div>
             </div>
         </div>
         <div id="secondRow" class="singleRow">
             <div id="2by1" class="tile">
             </div>
-            <div id="2by2" class="tile">
+            <div id="twoBy2" class="tile">
                 <img async class="bookImage" src="<%= data[0].imageUrl %>" />
             </div>
-            <div id="2by3" class="tile">
+            <div id="twoBy3" class="tile">
                 <img async class="bookImage" src="<%= data[1].imageUrl %>" />
             </div>
-            <div id="2by4" class="tile">
+            <div id="twoBy4" class="tile">
                 <img async class="bookImage" src="<%= data[2].imageUrl %>" />
             </div>
             <div id="2by5" class="tile">
             </div>
         </div>
         <div id="thirdRow" class="singleRow">
-            <div id="3by1" class="tile">
+            <div id="3by1" class="tileR">
                 <div class="recommendor">
-                    Recommendor
+                    <img async class="recommendorImg" src="<%= data[3].recomandedBy[0].imageUrl %>" />
+                    <p>@<%= data[3].recomandedBy[0].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[3].recomandedBy[1].imageUrl %>" />
+                    <p>@<%= data[3].recomandedBy[1].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[3].recomandedBy[2].imageUrl %>" />
+                    <p>@<%= data[3].recomandedBy[2].twitterhandle %></p>
                 </div>
             </div>
-            <div id="3by2" class="tile">
+            <div id="threeBy2" class="tile">
                 <img async class="bookImage" src="<%= data[3].imageUrl %>" />
             </div>
-            <div id="3by3" class="tile">
+            <div id="threeBy3" class="userTile">
+                <img async class="userImage" src="https://pbs.twimg.com/profile_images/1461166267394498562/qGmRH3b7_400x400.jpg" />
+            </div>
+            <div id="threeBy4" class="tile">
                 <img async class="bookImage" src="<%= data[4].imageUrl %>" />
             </div>
-            <div id="3by4" class="tile">
-                <img async class="bookImage" src="<%= data[5].imageUrl %>" />
-            </div>
-            <div id="3by5" class="tile">
+            <div id="3by5" class="tileR">
                 <div class="recommendor">
-                    Recommendor
+                    <img async class="recommendorImg" src="<%= data[4].recomandedBy[0].imageUrl %>" />
+                    <p>@<%= data[4].recomandedBy[0].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[4].recomandedBy[1].imageUrl %>" />
+                    <p>@<%= data[4].recomandedBy[1].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
                 </div>
             </div>
         </div>
         <div id="fourthRow" class="singleRow">
             <div id="4by1" class="tile">
             </div>
-            <div id="4by2" class="tile">
+            <div id="fourBy2" class="tile">
+                <img async class="bookImage" src="<%= data[5].imageUrl %>" />
+            </div>
+            <div id="fourBy3" class="tile">
                 <img async class="bookImage" src="<%= data[6].imageUrl %>" />
             </div>
-            <div id="4by3" class="tile">
+            <div id="fourBy4" class="tile">
                 <img async class="bookImage" src="<%= data[7].imageUrl %>" />
-            </div>
-            <div id="4by4" class="tile">
-                <img async class="bookImage" src="<%= data[8].imageUrl %>" />
             </div>
             <div id="4by5" class="tile">
             </div>
         </div>
         <div id="fifthRow" class="singleRow">
-            <div id="5by1" class="tile">
+            <div id="5by1" class="tileB">
                 <div class="recommendor">
-                    Recommendor
+                    <img async class="recommendorImg" src="<%= data[5].recomandedBy[0].imageUrl %>" />
+                    <p>@<%= data[5].recomandedBy[0].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[5].recomandedBy[1].imageUrl %>" />
+                    <p>@<%= data[5].recomandedBy[1].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[5].recomandedBy[2].imageUrl %>" />
+                    <p>@<%= data[5].recomandedBy[2].twitterhandle %></p>
                 </div>
             </div>
             <div id="5by2" class="tile">
 
             </div>
-            <div id="5by3" class="tile">
+            <div id="5by3" class="tileB">
                 <div class="recommendor">
-                    Recommendor
+                    <img async class="recommendorImg" src="<%= data[6].recomandedBy[0].imageUrl %>" />
+                    <p>@<%= data[6].recomandedBy[0].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[6].recomandedBy[1].imageUrl %>" />
+                    <p>@<%= data[6].recomandedBy[1].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[6].recomandedBy[2].imageUrl %>" />
+                    <p>@<%= data[6].recomandedBy[2].twitterhandle %></p>
                 </div>
             </div>
             <div id="5by4" class="tile">
 
             </div>
-            <div id="5by5" class="tile">
+            <div id="5by5" class="tileB">
                 <div class="recommendor">
-                    Recommendor
+                    <img async class="recommendorImg" src="<%= data[7].recomandedBy[0].imageUrl %>" />
+                    <p>@<%= data[7].recomandedBy[0].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[7].recomandedBy[1].imageUrl %>" />
+                    <p>@<%= data[7].recomandedBy[1].twitterhandle %></p>
+                </div>
+                <div class="recommendor">
+                    <img async class="recommendorImg" src="<%= data[7].recomandedBy[2].imageUrl %>" />
+                    <p>@<%= data[7].recomandedBy[2].twitterhandle %></p>
                 </div>
             </div>
         </div>
