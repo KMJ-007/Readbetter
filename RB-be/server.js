@@ -83,44 +83,71 @@ app.get("/user?",(req,res)=>{
 let userId=req.query.userHandle
 T.get('friends/list', [{ screen_name:userId },{count:200}],  function (err, data, response) {
   
+  /*{
+              imageUrl:"",
+              twitterhandle:"TonyRobbins",
+              name:"Tony Robbins"
+            }
+             */
   // console.log(data);
   let recomandation = bookRecomandation(data);    
-        // recomandation = [
-         
-        //   {
-        //     bookName:"Lamborghini Urraco and the V8’s: Urraco, Bravo, Silhouette, Athon, Jalpa",
-        //     bookAuthors:["Jean-Francois Marchet"],
-        //     recomandedBy:[{
-        //       imageUrl:"",
-        //       twitterhandle:"",
-        //       name:"Richard Lentinello"
-        //     },
-        //   ],
-        //     imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/05/lamborghini-urraco-the-v8s.jpg"
-        //   },{
-        //     bookName:"The Clash of Civilizations and the Remaking of World Order",
-        //     bookAuthors:[ "Samuel P. Huntington"],
-        //     recomandedBy:[{
-        //       imageUrl:"",
-        //       twitterhandle:"",
-        //       name:"Bogdan Savonea"
-        //     }],
-        //     imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/04/the-clash-of-civilizations-and-the-remaking-of-world-order.jpg"
-        //   },
-        //   {
-        //     bookName:"Platform Revolution: How Networked Markets Are Transforming the Economy and How to Make Them Work for You",
-        //     bookAuthors:[ " Geoffrey G. Parker ",
-        //     "Marshall W. Van Alstyne",
-        //     "Sangeet Paul Choudary"],
-        //     recomandedBy:[{
-        //       imageUrl:"",
-        //       twitterhandle:"",
-        //       name:"Laurentiu-Victor Balasa"
-        //     }],
-        //     imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/02/platform-revolution-cover.jpg"
-        //   },
+        recomandation = [
+
+          {
+            bookName:"Principles (for Success)",
+            bookAuthors:[ "Ray Dalio"],
+            recomandedBy:[
+              {
+              imageUrl:"",
+              twitterhandle:"billgates",
+              name:"Bill Gates"
+            },
+              {
+              imageUrl:"",
+              twitterhandle:"reedhastings",
+              name:"Reed Hastings"
+            },
+              {
+              imageUrl:"",
+              twitterhandle:"tferriss",
+              name:"Tim Ferriss"
+            },
+              {
+              imageUrl:"",
+              twitterhandle:"TonyRobbins",
+              name:"Tony Robbins"
+            }
+          ],
+          imageUrl:""
+          },
+          {
+            bookName:"Winners Dream: A Journey from Corner Store to Corner Office",
+            bookAuthors:[  "Bill McDermott"],
+            recomandedBy:[
+              {
+              imageUrl:"",
+              twitterhandle:"billgates",
+              name:"Bill Gates"
+            },
+              {
+              imageUrl:"",
+              twitterhandle:"reedhastings",
+              name:"Reed Hastings"
+            },
+              {
+              imageUrl:"",
+              twitterhandle:"tferriss",
+              name:"Tim Ferriss"
+            },
+              {
+              imageUrl:"",
+              twitterhandle:"TonyRobbins",
+              name:"Tony Robbins"
+            }
+          ],
+          },
           
-        // ]
+        ]
   res.json(recomandation);
   if(err){
     res.send(err);

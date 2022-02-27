@@ -21,7 +21,7 @@ const bookRecomandation=async(followersId)=>{
             
         }).clone().catch(function(err){ console.log(err)})
     }
-    // console.log(followerArray)
+    console.log(leadersId);
     // return leaderId;
     
 }
