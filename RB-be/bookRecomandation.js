@@ -1,10 +1,15 @@
 const bookdata = require('./database-exchange/book.json')
-
+const leaderData = require('./database-exchange/leaders.json')
+const Book = require('./models/book-model')
+const leader = require('./models/leader-model')
 const bookRecomandation=(followersId)=>{
     console.log("-------------------------------")
-    console.log(followersId,bookdata);
-    // console.log(bookdata);
+    // leader.find(followersId)
+    return followersId;
+
     
 }
+
+
 
 module.exports = bookRecomandation;

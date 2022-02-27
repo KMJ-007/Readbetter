@@ -13,8 +13,7 @@ const cookieParser = require("cookie-parser"); // parse cookie header
 const path = require("path");
 require('dotenv'). config();
 const Twit = require('twit');
-const bookData = require('./database-exchange/database');
-const bookRecomandation = require('./bookRecomandation')
+// const bookData = require('./database-exchange/database');
 var T = new Twit({
   consumer_key:         process.env.krishna_TWITTER_CONSUMER_KEY,
   consumer_secret:      process.env.krishna_TWITTER_CONSUMER_SECRET,
@@ -44,16 +43,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 require(path.join(__dirname, './config/passport-setup'))(passport); //Load passport config
 // set up cors to allow us to accept requests from our client
-app.use(
-  cors({
-    origin: "*", // allow to server to accept request from different origin
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    "preflightContinue": false,
-  "optionsSuccessStatus": 204,
-    allowedHeaders: ["Access-Control-Allow-Origin", "Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"],
-    // credentials: true // allow session cookie from browser to pass through
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000", // allow to server to accept request from different origin
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     credentials: true // allow session cookie from browser to pass through
+//   })
+// );
 
 
 
@@ -83,80 +79,16 @@ app.get("/", authCheck, (req, res) => {
   });
 });
 
-app.get("/user/:userId", (req,res)=>{
-  let userId=req.params.userId;
-  res.setHeader('Access-Control-Allow-Origin', ' *');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
-
-
-  T.get('friends/ids', { screen_name:userId },  function (err, data, response) {
-    // response.setHeader('Access-Control-Allow-Origin', '*');
-    // response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    // response.setHeader('Access-Control-Allow-Credentials', true);
-    // response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
-
-/* {
-        bookName:"",
-        bookAuthors:[],
-        recomandedBy:[{
-          imageUrl:"",
-          twitterhandle:"",
-          name:""
-        }],
-        imageUrl:""
-      }, */
-
-    console.log("::::::::::::::::::::::::::::::::::::::::::")
-    // console.log(response);
-    let recomandation = bookRecomandation(response);
-    recomandation = [
-     
-      {
-        bookName:"Lamborghini Urraco and the V8’s: Urraco, Bravo, Silhouette, Athon, Jalpa",
-        bookAuthors:["Jean-Francois Marchet"],
-        recomandedBy:[{
-          imageUrl:"",
-          twitterhandle:"",
-          name:"Richard Lentinello"
-        },
-      ],
-        imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/05/lamborghini-urraco-the-v8s.jpg"
-      },{
-        bookName:"The Clash of Civilizations and the Remaking of World Order",
-        bookAuthors:[ "Samuel P. Huntington"],
-        recomandedBy:[{
-          imageUrl:"",
-          twitterhandle:"",
-          name:"Bogdan Savonea"
-        }],
-        imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/04/the-clash-of-civilizations-and-the-remaking-of-world-order.jpg"
-      },
-      {
-        bookName:"Platform Revolution: How Networked Markets Are Transforming the Economy and How to Make Them Work for You",
-        bookAuthors:[ " Geoffrey G. Parker ",
-        "Marshall W. Van Alstyne",
-        "Sangeet Paul Choudary"],
-        recomandedBy:[{
-          imageUrl:"",
-          twitterhandle:"",
-          name:"Laurentiu-Victor Balasa"
-        }],
-        imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/02/platform-revolution-cover.jpg"
-      },
-      
-    ]
-    res.json(recomandation);
-    if(err){
-      res.send(err);
-    }
-  })
-});
-
-// app.get("/mongodata",(req,res)=>{
-//   res.json(bookData)
-// })
+app.get("/user/:userId",(req,res)=>{
+let userId=req.params.userId
+T.get('friends/list', { screen_name:userId },  function (err, data, response) {
+  console.log(data);
+  res.json(data);
+  if(err){
+    res.send(err);
+  }
+})
+})
 
 // connect react to nodejs express server
 app.listen(port, () => console.log(`Server is running on port ${port}!`));

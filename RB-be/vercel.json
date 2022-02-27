@@ -6,16 +6,5 @@
     ],
     "routes": [
       { "src": "/(.*)", "dest": "/server.js" }
-    ],
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          {
-          "key": "access-control-allow-origin",
-          "value": "http://localhost:3000'"
-        }
-        ]
-      }
     ]
   }
