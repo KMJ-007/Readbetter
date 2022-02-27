@@ -81,7 +81,7 @@ app.get("/", authCheck, (req, res) => {
 
 app.get("/user?",(req,res)=>{
 let userId=req.query.userHandle
-T.get('friends/list', { screen_name:userId },  function (err, data, response) {
+T.get('friends/list', [{ screen_name:userId },{count:200}],  function (err, data, response) {
   
   // console.log(data);
   let recomandation = bookRecomandation(data);    

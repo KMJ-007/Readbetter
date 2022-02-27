@@ -4,21 +4,25 @@ const Book = require('./models/book-model')
 const leader = require('./models/leader-model')
 const bookRecomandation=async(followersId)=>{
     console.log("-------------------------------")
-    leader.find(followersId)
+    // console.log(followersId.users);
     const followerArray = (followersId.users).map((data,i)=>{
 
         // console.log(data.screen_name)
         return data.screen_name
     })
-   const leaderId= await leader.find({"twitter.id":followerArray.map((data,i)=>{return data})},(err,data)=>{
-        if(err){
-            // console.log(err);
-            return err
-        }
-        
-    }).clone()
-    // console.log(leaderId)
-    return leaderId;
+    console.log(followerArray);
+    let leadersId= []
+    for (id in followerArray){
+
+       await leader.find({"twitter.id":followerArray[id]},(err,data)=>{
+            if(data){
+                leadersId.push(data);
+            }
+            
+        }).clone().catch(function(err){ console.log(err)})
+    }
+    // console.log(followerArray)
+    // return leaderId;
     
 }
 
