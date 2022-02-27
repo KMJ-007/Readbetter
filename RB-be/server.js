@@ -98,53 +98,168 @@ T.get('friends/list', [{ screen_name:userId },{count:200}],  function (err, data
             bookAuthors:[ "Ray Dalio"],
             recomandedBy:[
               {
-              imageUrl:"",
+              imageUrl:"https://pbs.twimg.com/profile_images/1414439092373254147/JdS8yLGI_400x400.jpg",
               twitterhandle:"billgates",
               name:"Bill Gates"
             },
               {
-              imageUrl:"",
+              imageUrl:"https://pbs.twimg.com/profile_images/2233350183/hastings_reed_abosch_400x400.jpg",
               twitterhandle:"reedhastings",
               name:"Reed Hastings"
             },
               {
-              imageUrl:"",
+              imageUrl:"https://pbs.twimg.com/profile_images/49918572/half-face-ice_400x400.jpg",
               twitterhandle:"tferriss",
               name:"Tim Ferriss"
             },
               {
-              imageUrl:"",
+              imageUrl:"https://pbs.twimg.com/profile_images/1440461885703217155/Js8kvT7a_400x400.jpg",
               twitterhandle:"TonyRobbins",
               name:"Tony Robbins"
             }
           ],
-          imageUrl:""
+          imageUrl:"https://images-na.ssl-images-amazon.com/images/I/41mD+n0RquL._SX258_BO1,204,203,200_.jpg"
           },
           {
-            bookName:"Winners Dream: A Journey from Corner Store to Corner Office",
-            bookAuthors:[  "Bill McDermott"],
+            bookName:"Stillness Is the Key",
+            bookAuthors:[  "Ryan Holiday"],
             recomandedBy:[
               {
-              imageUrl:"",
-              twitterhandle:"billgates",
-              name:"Bill Gates"
+              imageUrl:"https://pbs.twimg.com/profile_images/1403013239487680512/FEfDeOTX_400x400.jpg",
+              twitterhandle:"ProfCalNewport",
+              name:"Cal Newport"
             },
               {
-              imageUrl:"",
-              twitterhandle:"reedhastings",
-              name:"Reed Hastings"
+              imageUrl:"https://pbs.twimg.com/profile_images/1315809894411403265/GFTl08tw_400x400.jpg",
+              twitterhandle:"ariannahuff",
+              name:"Arianna Huffington"
             },
               {
-              imageUrl:"",
-              twitterhandle:"tferriss",
-              name:"Tim Ferriss"
+              imageUrl:"https://pbs.twimg.com/profile_images/1204727725836996608/ByShSrLR_400x400.jpg",
+              twitterhandle:"IAmMarkManson",
+              name:"Mark Manson"
             },
               {
-              imageUrl:"",
-              twitterhandle:"TonyRobbins",
-              name:"Tony Robbins"
+              imageUrl:"https://pbs.twimg.com/profile_images/1408049737157259271/7MmiUGAI_400x400.jpg",
+              twitterhandle:"angeladuckw",
+              name:"Angela Duckworth"
             }
           ],
+          imageUrl:"https://images-na.ssl-images-amazon.com/images/I/71xpXdXuZRL.jpg"
+          },
+          
+          {
+            bookName:"Super Human: The Bulletproof Plan to Age Backward and Maybe Even Live Forever",
+            bookAuthors:[  "Dave Asprey"],
+            recomandedBy:[
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/959130829589946368/XY2QpdJx_400x400.jpg",
+              twitterhandle:"GerardButler",
+              name:"Grerard Butler"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/1448695845088546820/wS-4VjjJ_400x400.jpg",
+              twitterhandle:"ZivaMeditation",
+              name:"Emily Fletcher"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/1129414062/Mercola-Dr-Joe-Mercola_400x400.jpg",
+              twitterhandle:"mercolainfo",
+              name:"Joseph Mercola"
+            }
+          ],
+          imageUrl:"https://images-na.ssl-images-amazon.com/images/I/71APv4qxx8L.jpg"
+          },
+          {
+            bookName:"Elevate: Push Beyond Your Limits and Unlock Success in Yourself and Others",
+            bookAuthors:[  "Robert Glazer"],
+            recomandedBy:[
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/935270007331749888/xZNXud5R_400x400.jpg",
+              twitterhandle:"ThisIsSethsBlog",
+              name:"Seth Godin"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/1427272847643316232/9CeNBJAr_400x400.jpg",
+              twitterhandle:"AdamMGrant",
+              name:"Adam Grant"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/1481362504810967041/RSAOLbKu_400x400.jpg",
+              twitterhandle:"DanielPink",
+              name:"Daniel Pink"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/751486747893047296/14CIA8Xk_400x400.jpg",
+              twitterhandle:"coachgoldsmith",
+              name:"Marshall Goldsmith"
+            }
+          ],
+          imageUrl:"https://images-na.ssl-images-amazon.com/images/I/412Pb6okLWL._SX328_BO1,204,203,200_.jpg"
+          },  
+          {
+            bookName:"Face to Face: The Art of Connection",
+            bookAuthors:[ "Brian Grazer"],
+            recomandedBy:[
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/1459294703/110711_r21057_p233_400x400.jpg",
+              twitterhandle:"sherylsandberg",
+              name:"Sheryl Sandberg"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/836744595316879363/CWd5Db_i_400x400.jpg",
+              twitterhandle:"Gladwell",
+              name:"Malcolm Gladwell"
+            }
+          ],
+          imageUrl:"https://images-na.ssl-images-amazon.com/images/I/71gI2iNULcL.jpg"
+          },
+          {
+            bookName:"Everything Is Figureoutable",
+            bookAuthors:[ "Marie Forleo"],
+            recomandedBy:[
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/1123359369570148353/Mh-Rf4Sk_400x400.jpg",
+              twitterhandle:"Oprah",
+              name:"Oprah Winfrey"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/935270007331749888/xZNXud5R_400x400.jpg",
+              twitterhandle:"ThisIsSethsBlog",
+              name:"Seth Godin"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/124934523/head_shot_400x400.jpg",
+              twitterhandle:"SPressfield",
+              name:"Steven Pressfield"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/1295112038096629760/3eCOaKDb_400x400.jpg",
+              twitterhandle:"simonsinek",
+              name:"Simon Sinek"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/1440461885703217155/Js8kvT7a_400x400.jpg",
+              twitterhandle:"TonyRobbins",
+              name:"Tony Robbins"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/1493135410230267906/knKNAh2V_400x400.jpg",
+              twitterhandle:"sophiaamoruso",
+              name:"Sophia Amorus"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/1315809894411403265/GFTl08tw_400x400.jpg",
+              twitterhandle:"ariannahuff",
+              name:"Arianna Huffington"
+            },
+              {
+              imageUrl:"https://pbs.twimg.com/profile_images/1187448678371463169/Bd0jNLQ9_400x400.jpg",
+              twitterhandle:"TheSharkDaymond",
+              name:"Daymond John"
+            },
+          ],
+          imageUrl:"https://images-na.ssl-images-amazon.com/images/I/51tEO57bs1L._SX328_BO1,204,203,200_.jpg"
           },
           
         ]
