@@ -1,17 +1,17 @@
 require('dotenv'). config();
 
 const TWITTER_TOKENS = {
-    TWITTER_CONSUMER_KEY: process.env.krishna_TWITTER_CONSUMER_KEY,
-    TWITTER_CONSUMER_SECRET: process.env.krishna_TWITTER_CONSUMER_SECRET,
-    TWITTER_ACCESS_TOKEN: process.env.krishna_TWITTER_ACCESS_TOKEN,
-    TWITTER_TOKEN_SECRET: process.env.krishna_TWITTER_TOKEN_SECRET,
+    TWITTER_CONSUMER_KEY: process.env.TWITTER_CONSUMER_KEY,
+    TWITTER_CONSUMER_SECRET: process.env.TWITTER_CONSUMER_SECRET,
+    TWITTER_ACCESS_TOKEN: process.env.TWITTER_ACCESS_TOKEN,
+    TWITTER_TOKEN_SECRET: process.env.TWITTER_TOKEN_SECRET,
     callbackURL: process.env.krishna_twitterCallback
   };
   
   const DB_USER = "admin";
   const DB_PASSWORD = process.env.DB_PASSWORD;
   const MONGODB = {
-    MONGODB_URI: `mongodb+srv://kmj-007:${process.env.DB_PASSWORD}@gladiator-kris.t7sjb.mongodb.net/scraper?retryWrites=true&w=majority`
+    MONGODB_URI: `mongodb+srv://admin:YZfTviqiLJsqaacO@cluster0.q1chg.mongodb.net/readbetter?retryWrites=true&w=majority`
   };
   
   const SESSION = {

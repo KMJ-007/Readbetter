@@ -26,9 +26,16 @@ function BooksRecommended(params) {
   //   }
   // },[resData]);
     
+//   async function getBookdata() {
+//     const books = await fetch(
+//         ("https://readbetter-backend.vercel.app/user/")+userHandle.twitterHandle);
+//     let response = await books.json();
+//     console.log(response);
+// }
+    
   async function getBookdata() {
     const books = await fetch(
-        ("https://readbetter-backend-kmj-007.vercel.app/user")+userHandle.twitterHandle);
+        ("http://localhost:1234/user/")+userHandle.twitterHandle);
     let response = await books.json();
     console.log(response);
 }
