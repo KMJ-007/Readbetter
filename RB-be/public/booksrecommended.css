@@ -52,7 +52,7 @@ userTile{
 
 .tileR {
     height: 6rem;
-    width: 6 rem;
+    width: 6rem;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@ userTile{
 
 .tileB {
     height: 6rem;
-    width: 6 rem;
+    width: 6rem;
     overflow: hidden;
 }
 
@@ -75,6 +75,7 @@ userTile{
 p {
     margin: 0;
     margin-left: 4px;
+    overflow: hidden;
 }
 .recommendor{
     display: flex;
