@@ -3,8 +3,8 @@ import {Box, Button, Heading, Flex, Image, Center, HStack, Stack, Text} from '@c
 import {FaTwitter} from 'react-icons/fa'
 import logo from '../android-chrome-192x192.png'
 import {useParams} from 'react-router-dom'
-import {localBE} from '../../offline-be'
-
+// import {localBE} from '../../offline-be'
+let localBE;
 
 function BooksRecommended(params) {
   const [resData, setResData] = useState();
