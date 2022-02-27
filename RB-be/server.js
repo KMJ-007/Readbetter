@@ -3,18 +3,17 @@ const express = require("express");
 const app = express();
 const port = 1234;
 const passport = require("passport");
-const passportSetup = require("../config/passport-setup");
+const passportSetup = require("./config/passport-setup");
 const session = require("express-session");
-const authRoutes = require("../routes/auth-router");
+const authRoutes = require("./routes/auth-router");
 const mongoose = require("mongoose");
-const keys = require("../config/keys");
+const keys = require("./config/keys");
 const cors = require("cors");
 const cookieParser = require("cookie-parser"); // parse cookie header
 const path = require("path");
 require('dotenv'). config();
 const Twit = require('twit');
-const bookRecomandation = require('../bookRecomandation')
-
+const bookRecomandation = require('./bookRecomandation')
 var T = new Twit({
   consumer_key:         process.env.krishna_TWITTER_CONSUMER_KEY,
   consumer_secret:      process.env.krishna_TWITTER_CONSUMER_SECRET,
@@ -339,4 +338,3 @@ app.get("/user?",(req,res)=>{
 
 // connect react to nodejs express server
 app.listen(port, () => console.log(`Server is running on port ${port}!`));
- 
