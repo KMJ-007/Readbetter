@@ -3,7 +3,7 @@ import {Box, Button, Heading, Flex, Image, Center} from '@chakra-ui/react'
 import {FaTwitter} from 'react-icons/fa'
 import logo from '../android-chrome-192x192.png'
 import {useParams} from 'react-router-dom'
-import {localBE} from '../../offline-be'
+// import {localBE} from '../../offline-be'
 
 
 function BooksRecommended(params) {
@@ -16,7 +16,7 @@ function BooksRecommended(params) {
 
   useEffect(() => {
     if(!resData){
-      fetch((localBE || 'https://readbetter-backend.vercel.app/user/krishnaa404')+userHandle.twitterHandle)
+      fetch(('https://readbetter-backend.vercel.app/user/')+userHandle.twitterHandle)
       .then((res) => {
         console.log(res);
         setResData(res);
