@@ -54,50 +54,49 @@ require(path.join(__dirname, './config/passport-setup'))(passport); //Load passp
 
 
 // set up routes
-app.use("/auth", authRoutes);
+// app.use("/auth", authRoutes);
 
-const authCheck = (req, res, next) => {
-  if (!req.user) {
-    res.status(401).json({
-      authenticated: false,
-      message: "user has not been authenticated"
-    });
-  } else {
-    next();
-  }
-};
+// const authCheck = (req, res, next) => {
+//   if (!req.user) {
+//     res.status(401).json({
+//       authenticated: false,
+//       message: "user has not been authenticated"
+//     });
+//   } else {
+//     next();
+//   }
+// };
 
-// if it's already login, send the profile response,
-// otherwise, send a 401 response that the user is not authenticated
-// authCheck before navigating to home page
-app.get("/", authCheck, (req, res) => {
-  res.status(200).json({
-    authenticated: true,
-    message: "user successfully authenticated",
-    user: req.user,
-    cookies: req.cookies
+// // if it's already login, send the profile response,
+// // otherwise, send a 401 response that the user is not authenticated
+// // authCheck before navigating to home page
+// app.get("/", authCheck, (req, res) => {
+//   res.status(200).json({
+//     authenticated: true,
+//     message: "user successfully authenticated",
+//     user: req.user,
+//     cookies: req.cookies
+//   });
+// });
+
+app.use(express.static('public'));
+app
+  .route("/")
+  .get( (req, res) => {
+    res.sendFile(process.cwd()+"/homepage.html")
   });
-});
 
-app.get("/user?",(req,res)=>{
-let userId=req.query.userHandle
-T.get('friends/list', [{ screen_name:userId },{count:200}],  function (err, data, response) {
-  
-  /*{
-              imageUrl:"",
-              twitterhandle:"TonyRobbins",
-              name:"Tony Robbins"
-            }
-             */
-  // console.log(data);
-  let recomandation = bookRecomandation(data);    
-        recomandation = [
+app.set("view engine", "ejs");
 
-          {
-            bookName:"Principles (for Success)",
-            bookAuthors:[ "Ray Dalio"],
-            recomandedBy:[
+app
+  .route("/user")
+  .get((req,res)=>{
+    let userId=req.query.userHandle
+
+          let  recomandation = [
+            
               {
+<<<<<<< HEAD
               imageUrl:"https://pbs.twimg.com/profile_images/1414439092373254147/JdS8yLGI_400x400.jpg",
               twitterhandle:"billgates",
               name:"Bill Gates"
@@ -268,6 +267,50 @@ T.get('friends/list', [{ screen_name:userId },{count:200}],  function (err, data
     res.send(err);
   }
 })
+=======
+                bookName:"Lamborghini Urraco and the V8’s: Urraco, Bravo, Silhouette, Athon, Jalpa",
+                bookAuthors:["Jean-Francois Marchet"],
+                recomandedBy:[{
+                  imageUrl:"",
+                  twitterhandle:"",
+                  name:"Richard Lentinello"
+                },
+              ],
+                imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/05/lamborghini-urraco-the-v8s.jpg"
+              },{
+                bookName:"The Clash of Civilizations and the Remaking of World Order",
+                bookAuthors:[ "Samuel P. Huntington"],
+                recomandedBy:[{
+                  imageUrl:"",
+                  twitterhandle:"",
+                  name:"Bogdan Savonea"
+                }],
+                imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/04/the-clash-of-civilizations-and-the-remaking-of-world-order.jpg"
+              },
+              {
+                bookName:"Platform Revolution: How Networked Markets Are Transforming the Economy and How to Make Them Work for You",
+                bookAuthors:[ " Geoffrey G. Parker ",
+                "Marshall W. Van Alstyne",
+                "Sangeet Paul Choudary"],
+                recomandedBy:[{
+                  imageUrl:"",
+                  twitterhandle:"",
+                  name:"Laurentiu-Victor Balasa"
+                }],
+                imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/02/platform-revolution-cover.jpg"
+              },
+              
+            ]
+      res.render(process.cwd()+"/pages/booksrecommended/booksrecommended.ejs", {data:recomandation})
+    // T.get('friends/list', { screen_name:userId },  function (err, data, response) {
+    //   // console.log(data);
+    // let recomandation = bookRecomandation(data);    
+
+    //   if(err){
+    //     res.send(err);
+    //   }
+    // })
+>>>>>>> 02f46e528353f29e0d5d41cdf3ddce70e8b8e055
 })
 
 // connect react to nodejs express server
