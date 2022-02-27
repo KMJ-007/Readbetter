@@ -84,17 +84,17 @@ app.get("/", authCheck, (req, res) => {
 
 app.get("/user/:userId", (req,res)=>{
   let userId=req.params.userId;
-  res.setHeader('Access-Control-Allow-Origin', ' http://localhost:3000');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
+  // res.setHeader('Access-Control-Allow-Origin', ' http://localhost:3000');
+  //   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  //   res.setHeader('Access-Control-Allow-Credentials', true);
+  //   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
 
 
   T.get('friends/ids', { screen_name:userId },  function (err, data, response) {
-    response.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    response.setHeader('Access-Control-Allow-Credentials', true);
-    response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
+    // response.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    // response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    // response.setHeader('Access-Control-Allow-Credentials', true);
+    // response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
 
     console.log("::::::::::::::::::::::::::::::::::::::::::")
     console.log(response);
