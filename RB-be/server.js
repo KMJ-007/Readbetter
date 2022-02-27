@@ -14,6 +14,7 @@ const path = require("path");
 require('dotenv'). config();
 const Twit = require('twit');
 const bookData = require('./database-exchange/database');
+const bookRecomandation = require('./bookRecomandation')
 var T = new Twit({
   consumer_key:         process.env.krishna_TWITTER_CONSUMER_KEY,
   consumer_secret:      process.env.krishna_TWITTER_CONSUMER_SECRET,
@@ -96,9 +97,57 @@ app.get("/user/:userId", (req,res)=>{
     // response.setHeader('Access-Control-Allow-Credentials', true);
     // response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
 
+/* {
+        bookName:"",
+        bookAuthors:[],
+        recomandedBy:[{
+          imageUrl:"",
+          twitterhandle:"",
+          name:""
+        }],
+        imageUrl:""
+      }, */
+
     console.log("::::::::::::::::::::::::::::::::::::::::::")
-    console.log(response);
-    res.json(data);
+    // console.log(response);
+    let recomandation = bookRecomandation(response);
+    recomandation = [
+     
+      {
+        bookName:"Lamborghini Urraco and the V8’s: Urraco, Bravo, Silhouette, Athon, Jalpa",
+        bookAuthors:["Jean-Francois Marchet"],
+        recomandedBy:[{
+          imageUrl:"",
+          twitterhandle:"",
+          name:"Richard Lentinello"
+        },
+      ],
+        imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/05/lamborghini-urraco-the-v8s.jpg"
+      },{
+        bookName:"The Clash of Civilizations and the Remaking of World Order",
+        bookAuthors:[ "Samuel P. Huntington"],
+        recomandedBy:[{
+          imageUrl:"",
+          twitterhandle:"",
+          name:"Bogdan Savonea"
+        }],
+        imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/04/the-clash-of-civilizations-and-the-remaking-of-world-order.jpg"
+      },
+      {
+        bookName:"Platform Revolution: How Networked Markets Are Transforming the Economy and How to Make Them Work for You",
+        bookAuthors:[ " Geoffrey G. Parker ",
+        "Marshall W. Van Alstyne",
+        "Sangeet Paul Choudary"],
+        recomandedBy:[{
+          imageUrl:"",
+          twitterhandle:"",
+          name:"Laurentiu-Victor Balasa"
+        }],
+        imageUrl:"https://www.theceolibrary.com/wp-content/uploads/2020/02/platform-revolution-cover.jpg"
+      },
+      
+    ]
+    res.json(recomandation);
     if(err){
       res.send(err);
     }

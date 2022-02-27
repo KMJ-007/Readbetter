@@ -1,14 +1,10 @@
-const fetch = require("node-fetch");
- async function getBookdata() {
-    const books = await fetch(
-        "http://localhost:1234/mongodata/books"
-    );
-    let response = await books.json();
-    bookRecomandation(bookdata=response)
-}
-const bookRecomandation=(followersId,bookdata)=>{
+const bookdata = require('./database-exchange/book.json')
+
+const bookRecomandation=(followersId)=>{
     console.log("-------------------------------")
-    console.log(bookdata);
+    console.log(followersId,bookdata);
+    // console.log(bookdata);
+    
 }
 
 module.exports = bookRecomandation;
