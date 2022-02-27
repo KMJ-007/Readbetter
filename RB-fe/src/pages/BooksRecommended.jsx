@@ -14,19 +14,25 @@ function BooksRecommended(params) {
   console.log({userHandle, resData})
 
 
-  useEffect(() => {
-    if(!resData){
-      fetch(('https://readbetter-backend.vercel.app/user/')+userHandle.twitterHandle,{ mode: 'no-cors', })
-      .then(res=>res.json())
-      .then((res)=>{
-        console.log(res);
-        setResData(res);
-      })
+  // useEffect(() => {
+  //   if(!resData){
+  //     fetch(('https://readbetter-backend.vercel.app/user/')+userHandle.twitterHandle,{ mode: 'no-cors', })
+  //     .then(res=>res.json())
+  //     .then((res)=>{
+  //       console.log(res);
+  //       setResData(res);
+  //     })
       
-    }
-  },[resData]);
+  //   }
+  // },[resData]);
     
-
+  async function getBookdata() {
+    const books = await fetch(
+        ("https://readbetter-backend-kmj-007.vercel.app/user")+userHandle.twitterHandle);
+    let response = await books.json();
+    console.log(response);
+}
+getBookdata();
   if (!resData || !resData.status) {
     return (
       <Center h="100vh">
